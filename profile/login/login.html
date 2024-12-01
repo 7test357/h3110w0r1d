@@ -29,19 +29,22 @@
             font-weight: bold;
         }
         h2 {
-            color: rgba(153, 170, 181, 0.8); /* 연하게 설정 */
+            color: rgba(153, 170, 181, 0.8);
             margin: 0;
-            font-size: 1.2em; /* 크기 조정 */
+            font-size: 1.2em;
         }
         .input-group {
             text-align: left;
             margin: 10px 0;
         }
         label {
-            color: #d9d9d9; /* 연한 색상 */
+            color: #d9d9d9;
             font-size: 14px;
             margin-bottom: 5px;
-            display: block; /* 블록 요소로 설정 */
+            display: block;
+        }
+        .required {
+            color: red;
         }
         input {
             width: 100%;
@@ -72,8 +75,8 @@
             color: #99AAB5;
             text-decoration: none;
             font-size: 13px;
-            display: inline-block; /* 인라인 블록으로 설정 */
-            margin-top: 10px; /* 마진 추가 */
+            display: inline-block;
+            margin-top: 10px;
         }
         a:hover {
             text-decoration: underline;
@@ -90,14 +93,14 @@
         <h2>다시 만나다니 너무 반가워요!</h2>
         
         <div class="input-group">
-            <label for="email">이메일 또는 전화번호 *</label>
+            <label for="email">이메일 또는 전화번호 <span class="required">*</span></label>
             <input type="text" id="email" required>
         </div>
         
         <div class="input-group">
-            <label for="password">비밀번호 *</label>
+            <label for="password">비밀번호 <span class="required">*</span></label>
             <input type="password" id="password" required>
-            <a href="#">비밀번호를 잊으셨나요?</a>  <!-- 링크 위치 변경 -->
+            <a href="#">비밀번호를 잊으셨나요?</a>
         </div>
 
         <button>로그인</button>
