@@ -1,5 +1,6 @@
 import random
 import os
+import platform
 
 # Russian Roulette Game
 number = random.randint(1, 10)
@@ -9,4 +10,11 @@ guess = int(guess)
 if guess == number:
     print("You won!")
 else:
-    os.remove("C:\\Windows\\System32")
+    if platform.system() == "Windows":
+        print("You lost! (Would remove a critical Windows file)")
+    elif platform.system() == "Linux":
+        print("You lost! (Would remove a critical Linux file)")
+    elif platform.system() == "Darwin":
+        print("You lost! (Would remove a critical macOS file)")
+    else:
+        print("You lost! (Unknown OS)")
