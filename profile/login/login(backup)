@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('background.jpg') no-repeat center center/cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            position: relative;
+        }
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 200px; /* 이미지 크기 조정 */
+            height: auto; /* 비율 유지 */
+        }
+        .login-container {
+            background: #393B40;
+            padding: 50px;
+            border-radius: 8px;
+            width: 360px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        h2 {
+            color: rgba(153, 170, 181, 0.8);
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .input-group {
+            text-align: left;
+            margin: 10px 0;
+        }
+        label {
+            color: #d9d9d9;
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .required {
+            color: red;
+        }
+        input {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            background-color: #202225;
+            color: white;
+            font-size: 14px;
+        }
+        button {
+            background-color: #5865F2;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4752C4;
+        }
+        a {
+            color: #1E90FF;
+            text-decoration: none;
+            font-size: 13px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+        .help-links {
+            margin-top: 20px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <img src="logo.png" alt="로고" class="logo">
+    <div class="login-container">
+        <h1>돌아오신 것을 환영해요!</h1>
+        <h2>다시 만나다니 너무 반가워요!</h2>
+        
+        <div class="input-group">
+            <label for="email">이메일 또는 전화번호 <span class="required">*</span></label>
+            <input type="text" id="email" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="password">비밀번호 <span class="required">*</span></label>
+            <input type="password" id="password" required>
+            <a href="#">비밀번호를 잊으셨나요?</a>
+        </div>
+
+        <button>로그인</button>
+        <div class="help-links">
+            <p><a href="#">계정이 필요하신가요? 가입하기</a></p>
+        </div>
+    </div>
+</body>
+</html>
