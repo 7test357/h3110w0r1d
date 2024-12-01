@@ -24,4 +24,9 @@ document.getElementById('login-button').addEventListener('click', function() {
         },
         body: JSON.stringify(data)
     })
+    .catch(error => {
+        console.error('Error:', error);
+        messageElement.textContent = '전송 중 오류가 발생했습니다.';
+        messageElement.style.color = '#ff0000';
+    });
 });
