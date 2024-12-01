@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>현재 시간</title>
+    <title>현재 시간과 아날로그 시계</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             background-color: #f4f4f4;
             margin: 0;
         }
+
         #clock {
             font-size: 36px;
             color: #333;
@@ -21,23 +23,91 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #analog-clock {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #333;
+            border-radius: 50%;
+            position: relative;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hand {
+            position: absolute;
+            background: #333;
+            transform-origin: bottom;
+            bottom: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .hour-hand {
+            width: 6px;
+            height: 50px;
+            background: #333;
+            z-index: 3;
+        }
+
+        .minute-hand {
+            width: 4px;
+            height: 70px;
+            background: #666;
+            z-index: 2;
+        }
+
+        .second-hand {
+            width: 2px;
+            height: 90px;
+            background: red;
+            z-index: 1;
+        }
+
+        .center-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #333;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 4;
         }
     </style>
 </head>
 <body>
     <div id="clock">YYYY-MM-DD HH:MM:SS</div>
+    <div id="analog-clock">
+        <div class="hand hour-hand" id="hour-hand"></div>
+        <div class="hand minute-hand" id="minute-hand"></div>
+        <div class="hand second-hand" id="second-hand"></div>
+        <div class="center-dot"></div>
+    </div>
 
     <script>
         function updateTime() {
             const now = new Date();
             const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0'); // 월은 0부터 시작하므로 +1
+            const month = String(now.getMonth() + 1).padStart(2, '0');
             const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const currentTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const currentTime = `${year}-${month}-${day} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
             document.getElementById('clock').textContent = currentTime;
+
+            // 아날로그 시계 업데이트
+            const hourDeg = (hours % 12) * 30 + (minutes / 60) * 30; // 시각
+            const minuteDeg = minutes * 6; // 분각
+            const secondDeg = seconds * 6; // 초각
+
+            document.getElementById('hour-hand').style.transform = `translateX(-50%) rotate(${hourDeg}deg)`;
+            document.getElementById('minute-hand').style.transform = `translateX(-50%) rotate(${minuteDeg}deg)`;
+            document.getElementById('second-hand').style.transform = `translateX(-50%) rotate(${secondDeg}deg)`;
         }
 
         setInterval(updateTime, 1000);
