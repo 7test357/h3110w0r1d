@@ -11,69 +11,75 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: #40444B;
+            background: url('background.jpg') no-repeat center center/cover;
             font-family: Arial, sans-serif;
+            color: white;
         }
         .login-container {
-            background: #2C2F33;
-            padding: 40px;
-            border-radius: 10px;
-            width: 400px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background: rgba(32, 34, 37, 0.85);
+            padding: 50px;
+            border-radius: 8px;
+            width: 360px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 24px;
+            margin-bottom: 30px;
+            font-size: 1.8em;
         }
         input {
             width: 100%;
-            padding: 15px;
+            padding: 14px;
             margin: 10px 0;
             border: none;
             border-radius: 5px;
-            background-color: #18191C;
+            background-color: #202225;
             color: white;
-            font-size: 16px;
+            font-size: 14px;
         }
         input::placeholder {
             color: #72767D;
         }
-        a {
-            color: #99AAB5;
-            font-size: 14px;
-            text-decoration: none;
-            display: block;
-            margin: 10px 0;
-        }
         button {
             background-color: #5865F2;
             color: white;
-            padding: 15px;
+            padding: 14px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            font-size: 16px;
-            margin-top: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #4752C4;
         }
-        p {
-            margin: 10px 0 0;
+        a {
+            color: #99AAB5;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .help-links {
+            margin-top: 20px;
+            font-size: 13px;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h1>돌아오신 것을 환영해요!</h1>
-        <input type="text" placeholder="이메일 또는 전화번호" required>
+        <h1>로그인하세요</h1>
+        <input type="text" placeholder="이메일 또는 사용자명" required>
         <input type="password" placeholder="비밀번호" required>
-        <a href="#">비밀번호를 잊으셨나요?</a>
         <button>로그인</button>
-        <p><a href="#">계정이 필요하나요? 가입하기</a></p>
+        <div class="help-links">
+            <p><a href="#">비밀번호를 잊으셨나요?</a></p>
+            <p><a href="#">계정이 필요하신가요? 가입하기</a></p>
+        </div>
     </div>
 </body>
 </html>
