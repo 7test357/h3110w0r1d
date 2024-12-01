@@ -1,1 +1,57 @@
-로그인
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경고 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8d7da; /* 경고 배경 색 */
+            font-family: Arial, sans-serif;
+            color: #721c24; /* 경고 텍스트 색 */
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #f5c6cb;
+            border-radius: 8px;
+            background-color: #f8d7da;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #dc3545; /* 버튼 색 */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #c82333; /* 버튼 호버 색 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>경고!</h1>
+        <p>로그인 페이지 접속 후 실제 아이디와 비밀번호를 치면 안됩니다</p>
+        <p>다른 페이지로 이동하려면 아래 버튼을 클릭하세요.</p>
+        <a href="login.html">로그인 페이지로 돌아가기</a>
+    </div>
+</body>
+</html>
