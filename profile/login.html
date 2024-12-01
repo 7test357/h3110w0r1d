@@ -11,15 +11,15 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #4B0082, #1E90FF);
+            background: linear-gradient(135deg, #5865F2, #3E5B99);
             font-family: Arial, sans-serif;
             color: white;
         }
         .login-container {
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(54, 57, 63, 0.9);
             padding: 2rem;
             border-radius: 10px;
-            width: 300px;
+            width: 350px;
             text-align: center;
         }
         input {
@@ -28,6 +28,11 @@
             margin: 10px 0;
             border: none;
             border-radius: 5px;
+            background-color: #202225;
+            color: white;
+        }
+        input::placeholder {
+            color: #72767D;
         }
         button {
             background-color: #7289DA;
@@ -37,16 +42,18 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
+            margin-top: 10px;
         }
         button:hover {
             background-color: #5B6EAE;
         }
-        .qr-code {
-            margin-top: 20px;
-        }
         a {
             color: #99AAB5;
             text-decoration: none;
+            font-size: 14px;
+        }
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -57,11 +64,6 @@
         <input type="password" placeholder="비밀번호" required>
         <a href="#">비밀번호를 잊으셨나요?</a>
         <button>로그인</button>
-        <div class="qr-code">
-            <p>QR 코드로 로그인</p>
-            <img src="your-qr-code-image-url" alt="QR 코드" style="width: 100px; height: 100px;">
-            <p>Discord 모바일 앱으로 스캔해 바로 로그인하세요.</p>
-        </div>
         <p><a href="#">계정이 필요하나요? 가입하기</a></p>
     </div>
 </body>
