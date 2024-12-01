@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이핑 연습</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        #practice-area {
+            margin: 20px auto;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>타이핑 연습</h1>
+    </header>
+    <main>
+        <section id="practice-area">
+            <h2>연습하기</h2>
+            <textarea id="typing-input" placeholder="여기에 입력하세요..."></textarea>
+            <button id="start-button">시작하기</button>
+            <p id="result"></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 타이핑 연습 사이트</p>
+    </footer>
+
+    <script>
+        let startTime, endTime;
+        let isTyping = false;
+
+        const textToType = "Hello, world! 타이핑 연습을 시작해 보세요."; // 연습할 텍스트
+        const typingInput = document.getElementById('typing-input');
+        const resultText = document.getElementById('result');
+        const startButton = document.getElementById('start-button');
+
+        startButton.addEventListener('click', startTyping);
+
+        function startTyping() {
+            if (isTyping) return;
+
+            typingInput.value = '';
+            typingInput.disabled = false;
+            typingInput.placeholder = textToType;
+            startTime = new Date();
+            isTyping = true;
+            resultText.textContent = '';
+        }
+
+        typingInput.addEventListener('input', function() {
+            const typedText = typingInput.value;
+            if (typedText === textToType) {
+                endTyping();
+            }
+        });
+
+        function endTyping() {
+            endTime = new Date();
+            const timeTaken = (endTime - startTime) / 1000; // 초 단위로 변환
+            const wordsTyped = typingInput.value.split(' ').length;
+            const speed = Math.round((wordsTyped / timeTaken) * 60); // 분당 타이핑 속도
+            resultText.textContent = `완료! 소요 시간: ${timeTaken}초, 속도: ${speed}단어/분`;
+            typingInput.disabled = true;
+            isTyping = false;
+        }
+    </script>
+</body>
+</html>
