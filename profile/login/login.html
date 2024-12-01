@@ -72,6 +72,8 @@
             color: #99AAB5;
             text-decoration: none;
             font-size: 13px;
+            display: inline-block; /* 인라인 블록으로 설정 */
+            margin-top: 10px; /* 마진 추가 */
         }
         a:hover {
             text-decoration: underline;
@@ -95,11 +97,11 @@
         <div class="input-group">
             <label for="password">비밀번호 *</label>
             <input type="password" id="password" required>
+            <a href="#">비밀번호를 잊으셨나요?</a>  <!-- 링크 위치 변경 -->
         </div>
 
         <button>로그인</button>
         <div class="help-links">
-            <p><a href="#">비밀번호를 잊으셨나요?</a></p>
             <p><a href="#">계정이 필요하신가요? 가입하기</a></p>
         </div>
     </div>
