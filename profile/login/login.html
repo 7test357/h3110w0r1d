@@ -22,6 +22,14 @@
             width: 360px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            position: relative; /* 포지션 설정 */
+        }
+        .logo {
+            position: absolute; /* 절대 위치 설정 */
+            top: 20px;
+            left: 20px;
+            width: 50px; /* 이미지 크기 조정 */
+            height: auto; /* 비율 유지 */
         }
         h1 {
             margin-bottom: 10px;
@@ -73,14 +81,14 @@
         }
         a {
             color: #1E90FF;
-            text-decoration: none; /* 기본 밑줄 제거 */
+            text-decoration: none;
             font-size: 13px;
             display: inline-block;
             margin-top: 10px;
         }
         a:hover {
-            text-decoration: underline; /* 호버 시 밑줄 추가 */
-            color: #ffffff; /* 호버 시 색상 변경 */
+            text-decoration: underline;
+            color: #ffffff;
         }
         .help-links {
             margin-top: 20px;
@@ -90,6 +98,7 @@
 </head>
 <body>
     <div class="login-container">
+        <img src="logo.jpg" alt="로고" class="logo">
         <h1>돌아오신 것을 환영해요!</h1>
         <h2>다시 만나다니 너무 반가워요!</h2>
         
