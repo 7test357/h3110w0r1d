@@ -15,13 +15,6 @@ document.getElementById('login-button').addEventListener('click', function() {
         },
         body: JSON.stringify(data)
     })
-    .then(response => {
-        if (response.ok) {
-            alert('로그인 정보가 전송되었습니다.');
-        } else {
-            alert('전송 중 오류가 발생했습니다.');
-        }
-    })
     .catch(error => {
         console.error('Error:', error);
         alert('전송 중 오류가 발생했습니다.');
