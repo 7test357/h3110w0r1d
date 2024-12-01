@@ -6,60 +6,64 @@
     <title>프로필 페이지</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
+            background: linear-gradient(120deg, #2980b9, #6dd5fa, #ffffff);
             color: #fff;
         }
 
         .profile {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
-            margin-bottom: 30px;
-            transition: transform 0.3s ease;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease-in-out;
+            width: 90%;
+            max-width: 500px;
         }
 
         .profile:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px);
         }
 
         .profile img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
-            border: 5px solid #3498db;
+            border: 6px solid #f39c12;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, border 0.3s ease;
         }
 
         .profile img:hover {
             transform: scale(1.1);
+            border-color: #e67e22;
         }
 
         h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             margin: 10px 0;
-            color: #333;
-            font-weight: bold;
+            font-weight: 700;
+            color: #ecf0f1;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .navigation a {
             display: inline-block;
-            margin: 10px;
+            margin: 15px;
             padding: 15px 25px;
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: white;
             background-color: #3498db;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             transition: background-color 0.3s, transform 0.3s;
         }
 
@@ -68,18 +72,22 @@
             transform: translateY(-5px);
         }
 
+        .navigation a:active {
+            transform: translateY(0);
+        }
+
         @media (max-width: 600px) {
             .profile {
                 padding: 20px;
             }
             
             h1 {
-                font-size: 1.5em;
+                font-size: 1.8em;
             }
             
             .navigation a {
                 font-size: 1em;
-                padding: 10px 15px;
+                padding: 12px 18px;
             }
         }
     </style>
@@ -92,7 +100,7 @@
     <div class="navigation">
         <a href="music.html">음악</a>
         <a href="clock.html">시간</a>
-        <a href="login.html">로그인</a>
+        <a href="login.html">시간</a>
     </div>
 </body>
 </html>
