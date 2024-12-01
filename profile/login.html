@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #4B0082, #1E90FF);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .login-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #7289DA;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #5B6EAE;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        a {
+            color: #99AAB5;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>돌아오신 것을 환영해요!</h1>
+        <input type="text" placeholder="이메일 또는 전화번호" required>
+        <input type="password" placeholder="비밀번호" required>
+        <a href="#">비밀번호를 잊으셨나요?</a>
+        <button>로그인</button>
+        <div class="qr-code">
+            <p>QR 코드로 로그인</p>
+            <img src="your-qr-code-image-url" alt="QR 코드" style="width: 100px; height: 100px;">
+            <p>Discord 모바일 앱으로 스캔해 바로 로그인하세요.</p>
+        </div>
+        <p><a href="#">계정이 필요하나요? 가입하기</a></p>
+    </div>
+</body>
+</html>
